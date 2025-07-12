@@ -10,7 +10,13 @@ Proyecto final de "Arquitectura y Sistemas Operativos"
 
 ## 🚀 Para comenzar:
 
-1. Asegúrate de tener Docker y Docker Compose instalados en tu máquina. Consulta la [Guía de Instalación de Docker](docs/0.InstalacionDocker.md) si necesitas ayuda.
+0. Asegurate de tener instalado Git!
+
+```bash
+   winget install --id Git.Git -e --source winget
+```
+
+1. Asegurate de tener Docker y Docker Compose instalados en tu máquina. Consulta la [Guía de Instalación de Docker](docs/0.InstalacionDocker.md) si necesitas ayuda.
 2. Copia `.env.example` a `.env` y revisa los valores, ajústalos si lo consideras necesario.
 3. Abre una terminal en la raíz del proyecto y ejecuta el siguiente comando para construir e iniciar los contenedores:
    ```bash
@@ -32,8 +38,8 @@ Proyecto final de "Arquitectura y Sistemas Operativos"
 Abrir la terminal o Git Bash y ejecuta:
 
 ```bash
-git clone https://github.com/your-org/docker-final-project.git
-cd docker-final-project
+git clone https://github.com/JereFassi/utn-so-final-project.git
+cd utn-so-final-project
 ```
 
 ---
@@ -42,7 +48,7 @@ cd docker-final-project
 
 - Ir a [GitHub](https://github.com).
 - Hacer clic en **Nuevo repositorio**.
-- Elegir un nombre, por ejemplo: `docker-final-project-tu-nombre`.
+- Elegir un nombre, por ejemplo: `utn-so-final-project-tu-nombre`.
 - NO lo inicialices con README (ya tienes uno).
 - Hacer clic en **Crear repositorio**.
 
@@ -54,7 +60,7 @@ En la terminal, ejecuta:
 
 ```bash
 git remote remove origin
-git remote add origin https://github.com/tuusuario/docker-final-project-tu-nombre.git
+git remote add origin https://github.com/tuusuario/utn-so-final-project-tu-nombre.git
 ```
 
 ---
@@ -85,7 +91,7 @@ git push -u origin main
 Copia el enlace de tu repositorio:
 
 ```
-https://github.com/tuusuario/docker-final-project-tu-nombre
+https://github.com/tuusuario/utn-so-final-project-tu-nombre
 ```
 
 Y envíalo por correo y con copia a:
