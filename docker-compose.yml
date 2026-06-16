@@ -1,14 +1,10 @@
-version: '3.8'
-
 services:
   backend:
-    container_name: students_backend
     build: ./backend
     expose:
       - "3000"
-    networks:
-      - students_network
     environment:
+      - PORT=3000
       - PGUSER=${PGUSER}
       - PGPASSWORD=${PGPASSWORD}
       - PGDATABASE=${PGDATABASE}
@@ -19,23 +15,18 @@ services:
 
   postgres:
     image: postgres:16.9
-    container_name: students_database
     expose:
       - "5432"
-    networks:
-      - students_network
     environment:
       POSTGRES_USER: ${PGUSER}
       POSTGRES_PASSWORD: ${PGPASSWORD}
       POSTGRES_DB: ${PGDATABASE}
     volumes:
+      - postgres_data:/var/lib/postgresql/data
       - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   nginx:
     image: nginx:alpine
-    container_name: students_nginx
-    networks:
-      - students_network
     ports:
       - "80:80"
     volumes:
@@ -44,7 +35,5 @@ services:
     depends_on:
       - backend
 
-networks:
-  students_network:
-    driver: bridge
-    name: students_network
+volumes:
+  postgres_data:

@@ -20,14 +20,30 @@ Proyecto final de "Arquitectura y Sistemas Operativos"
 2. Copia `.env.example` a `.env` y revisa los valores, ajústalos si lo consideras necesario.
 3. Abre una terminal en la raíz del proyecto y ejecuta el siguiente comando para construir e iniciar los contenedores:
    ```bash
-   docker-compose up --build
+   docker compose up --build
    ```
 4. Espera a que todos los servicios (backend, base de datos y nginx) estén levantados correctamente.
 5. Abre tu navegador web y accede a [http://localhost](http://localhost) para ver la aplicación funcionando.
 6. Si necesitas detener los servicios, presiona `Ctrl+C` en la terminal y luego ejecuta:
    ```bash
-   docker-compose down
+   docker compose down
    ```
+
+> Nota: `docker-compose` era el comando usado por Docker Compose v1. En instalaciones actuales se usa `docker compose` como subcomando de Docker.
+
+## URLs de prueba
+
+- Frontend: [http://localhost](http://localhost)
+- Ping del backend: [http://localhost/api/ping](http://localhost/api/ping)
+- Lista de estudiantes: [http://localhost/api/students](http://localhost/api/students)
+- Saludo: [http://localhost/api/greet?name=TuNombre](http://localhost/api/greet?name=TuNombre)
+
+## Persistencia de datos
+
+PostgreSQL guarda sus datos en un volumen nombrado de Docker.
+
+- `docker compose down` detiene y elimina los contenedores, pero conserva el volumen con los datos.
+- `docker compose down -v` también elimina los volúmenes; al volver a levantar el proyecto, PostgreSQL ejecuta de nuevo `postgres/init.sql` y recrea los datos iniciales.
 
 ---
 
@@ -104,6 +120,6 @@ Y envíalo por correo y con copia a:
 ## ✅ Notas adicionales:
 
 🔹 Hacer commits frecuentes con mensajes claros (“Agregada ruta greet”, “Conectado caché Redis”).  
-🔹 Probar tu proyecto con `docker-compose up --build` antes de subirlo.  
+🔹 Probar tu proyecto con `docker compose up --build` antes de subirlo.  
 🔹 Revisa que tu `.env` no tenga datos sensibles antes de hacer push.  
 🔹 Si tienen dudas, pregunten lo que necesiten!
