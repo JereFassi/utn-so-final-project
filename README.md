@@ -17,7 +17,7 @@ Proyecto final de "Arquitectura y Sistemas Operativos"
 ```
 
 1. Asegurate de tener Docker y Docker Compose instalados en tu máquina. Consulta la [Guía de Instalación de Docker](docs/0.InstalacionDocker.md) si necesitas ayuda.
-2. Copia `.env.example` a `.env` y revisa los valores, ajústalos si lo consideras necesario.
+2. Opcional: copia `.env.example` a `.env` si querés cambiar los valores de la base de datos.
 3. Abre una terminal en la raíz del proyecto y ejecuta el siguiente comando para construir e iniciar los contenedores:
    ```bash
    docker compose up --build
@@ -44,6 +44,7 @@ PostgreSQL guarda sus datos en un volumen nombrado de Docker.
 
 - `docker compose down` detiene y elimina los contenedores, pero conserva el volumen con los datos.
 - `docker compose down -v` también elimina los volúmenes; al volver a levantar el proyecto, PostgreSQL ejecuta de nuevo `postgres/init.sql` y recrea los datos iniciales.
+- Si no existe `.env`, Docker Compose usa valores por defecto simples: usuario `student`, contraseña `studentpass` y base `school`.
 
 ---
 
